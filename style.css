@@ -1,7 +1,29 @@
+.u-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.u-header .u-sheet-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+@media (max-width: 768px) {
+  .u-menu-1 {
+      flex-direction: column;
+      align-items: center;
+  }
+}
  .u-section-1 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/photo.png');
   background-repeat: no-repeat;
-  background-size: cover, cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .u-section-1 .u-sheet-1 {
@@ -129,12 +151,47 @@
   width: 1053px;
   margin: 55px auto 0;
 }
-
-.u-section-2 .u-gallery-inner-1 {
-  grid-template-columns: repeat(3, auto);
-  grid-gap: 45px;
+.u-gallery-1 {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.u-gallery-1 {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.u-gallery-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.u-gallery-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Кількість елементів в рядку залежить від ширини контейнера */
+  gap: 20px; /* Відстань між елементами */
+  align-items: center; /* Вирівнювання елементів вертикально */
+  justify-items: center; /* Вирівнювання елементів горизонтально */
 }
 
+.u-gallery-item {
+  display: flex;
+  flex-direction: column; /* Розташування елементів вертикально */
+  align-items: center; /* Центрування тексту під картинкою */
+}
+
+.u-gallery-item img {
+  max-width: 100%; /* Адаптивність зображень */
+  height: auto; /* Збереження пропорцій */
+}
+
+.u-gallery-item p {
+  margin-top: 10px; /* Простір між картинкою і текстом */
+  text-align: center; /* Вирівнювання тексту */
+}
 .u-section-2 .u-over-slide-1 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
   padding: 20px;
